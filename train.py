@@ -10,12 +10,7 @@ import sys
 
 from utils import *
 from configs.config_setting import setting_config
-from models.MEW10_10 import MEWUNet
-from models.unet import UNet
-from models.transunet import VisionTransformer
-from models.swinunet import SwinUnet
-from models.vmunet import VMUNet
-from models.mambaunet import MambaUnet
+from models.MMFUNet import MMFUNet
 import warnings
 from torchvision import transforms
 from datasets.dataset import RandomGenerator,myResize
@@ -80,13 +75,9 @@ def main(config):
 
     print('#----------Prepareing Model----------#')
                         
-    #else: raise Exception('network in not right!')
-    # model=MEWUNet()
-    #model=VisionTransformer(num_classes=1)
-    # model=SwinUnet(num_classes=1)
-    #model=MambaUnet(img_size=256, num_classes=1)
-    model=UNet(3,9)
-    #model =VMUNet()
+  
+    # model=MEWUNet(config.input_channels, config.num_classes)
+   
     device = torch.device('cuda:0')
     model = model.to(device)
 
