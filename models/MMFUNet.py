@@ -292,7 +292,7 @@ class BasicBlock(nn.Module):
         return out
     
     
-class MEWUNet(nn.Module):
+class MMFUNet(nn.Module):
     def __init__(self, in_c=3, out_c=1, dim= [32,64,128, 256,512], depth1=[2,2,9,2],depth=[1, 2, 2, 4], mlp_ratio=4):
         super().__init__()
         self.e0 = nn.Sequential(
@@ -536,6 +536,3 @@ class MEWUNet(nn.Module):
 
 
 
-if __name__=="__main__":
-    model=MEWUNet()
-    stat(model,(3,256,256))
