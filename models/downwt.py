@@ -34,18 +34,3 @@ class Down_wt(nn.Module):
         x = self.conv_bn_relu(x)
         return x
 
-
-if __name__ == '__main__':
-    # 实例化Down_wt模块
-    down_wt = Down_wt(in_ch=3, out_ch=64)
-
-    # 创建一个4维张量来模拟输入数据，形状为(batch_size, channels, height, width)
-    # 例如：batch_size = 1, channels = 3, height = 64, width = 64
-    input_tensor = torch.randn(1, 3, 64, 64)
-
-    # 通过Down_wt模块运行输入张量
-    output_tensor = down_wt(input_tensor)
-
-    # 打印输入和输出的形状
-    print(f"Input Shape: {input_tensor.shape}")
-    print(f"Output Shape: {output_tensor.shape}")
